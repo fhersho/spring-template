@@ -1,4 +1,4 @@
-package com.spring_template.demo.controller;
+package com.spring_template.demo.order.infrastructure.rest;
 
 import com.spring_template.demo.dto.order.NewOrderDto;
 import com.spring_template.demo.dto.order.OrderDto;

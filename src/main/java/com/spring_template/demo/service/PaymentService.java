@@ -1,11 +1,10 @@
 package com.spring_template.demo.service;
 
+import com.spring_template.demo.client.infraestructure.repository.jpa.ClientJPARepository;
 import com.spring_template.demo.dto.payment.NewPaymentDto;
 import com.spring_template.demo.dto.payment.PaymentDto;
-import com.spring_template.demo.entity.Client;
-import com.spring_template.demo.entity.Payment;
-import com.spring_template.demo.repository.ClientRepository;
-import com.spring_template.demo.repository.PaymentRepository;
+import com.spring_template.demo.payment.infrastructure.repository.jpa.PaymentEntity;
+import com.spring_template.demo.payment.infrastructure.repository.jpa.PaymentJPARepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -16,12 +15,12 @@ import java.util.stream.Collectors;
 @Service
 public class PaymentService {
 
-    private final PaymentRepository paymentRepository;
-    private final ClientRepository clientRepository;
+    private final PaymentJPARepository paymentRepository;
+    private final ClientJPARepository clientRepository;
 
     public PaymentDto save(NewPaymentDto newPaymentDto) {
         Client client = clientRepository.findById(newPaymentDto.clientId()).orElseThrow();
-        Payment payment = new Payment();
+        PaymentEntity payment = new PaymentEntity();
         payment.setDescription(newPaymentDto.description());
         payment.setAmount(newPaymentDto.amount());
         payment.setClient(client);
@@ -30,7 +29,7 @@ public class PaymentService {
     }
 
     public PaymentDto findById(Integer id) {
-        Payment payment = paymentRepository.findById(id).orElseThrow();
+        PaymentEntity payment = paymentRepository.findById(id).orElseThrow();
         return new PaymentDto(payment.getId(), payment.getDescription(), payment.getAmount(), payment.getClient().getId());
     }
 

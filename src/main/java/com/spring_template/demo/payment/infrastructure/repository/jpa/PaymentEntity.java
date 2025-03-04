@@ -1,4 +1,4 @@
-package com.spring_template.demo.entity;
+package com.spring_template.demo.payment.infrastructure.repository.jpa;
 
 import jakarta.persistence.*;
 import lombok.Data;
@@ -6,7 +6,7 @@ import lombok.Data;
 @Data
 @Entity
 @Table(name = "payments")
-public class Payment extends BaseEntity {
+public class PaymentEntity {
 
     @Id
     @Column(name = "id", nullable = false)

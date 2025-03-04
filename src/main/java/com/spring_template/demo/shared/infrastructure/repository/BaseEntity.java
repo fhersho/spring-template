@@ -1,4 +1,4 @@
-package com.spring_template.demo.entity;
+package com.spring_template.demo.shared.infrastructure.repository;
 
 import jakarta.persistence.Temporal;
 import jakarta.persistence.TemporalType;

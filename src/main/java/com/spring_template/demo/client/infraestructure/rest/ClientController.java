@@ -1,4 +1,4 @@
-package com.spring_template.demo.controller;
+package com.spring_template.demo.client.infraestructure.rest;
 
 import com.spring_template.demo.dto.client.ClientDto;
 import com.spring_template.demo.dto.client.NewClientDto;

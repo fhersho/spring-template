@@ -1,4 +1,4 @@
-package com.spring_template.demo.controller;
+package com.spring_template.demo.payment.infrastructure.rest;
 
 import com.spring_template.demo.dto.payment.NewPaymentDto;
 import com.spring_template.demo.dto.payment.PaymentDto;

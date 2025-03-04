@@ -1,4 +1,4 @@
-package com.spring_template.demo.entity;
+package com.spring_template.demo.order.infrastructure.repository.jpa;
 
 import jakarta.persistence.*;
 import lombok.Data;
@@ -6,7 +6,7 @@ import lombok.Data;
 @Data
 @Entity
 @Table(name = "orders")
-public class Order extends BaseEntity {
+public class OrderEntity {
 
     @Id
     @Column(name = "id", nullable = false)

@@ -1,9 +1,8 @@
 package com.spring_template.demo.service;
 
+import com.spring_template.demo.client.infraestructure.repository.jpa.ClientJPARepository;
 import com.spring_template.demo.dto.client.ClientDto;
 import com.spring_template.demo.dto.client.NewClientDto;
-import com.spring_template.demo.entity.Client;
-import com.spring_template.demo.repository.ClientRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -14,7 +13,7 @@ import java.util.stream.Collectors;
 @Service
 public class ClientService {
 
-    private final ClientRepository clientRepository;
+    private final ClientJPARepository clientRepository;
 
     public ClientDto save(NewClientDto newClientDto) {
         Client client = new Client();
