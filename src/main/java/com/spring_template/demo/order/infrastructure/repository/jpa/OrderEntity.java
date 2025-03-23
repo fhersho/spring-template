@@ -1,6 +1,9 @@
 package com.spring_template.demo.order.infrastructure.repository.jpa;
 
-import jakarta.persistence.*;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 import lombok.Data;
 
 @Data
@@ -14,7 +17,6 @@ public class OrderEntity {
     private String description;
     private Integer amount;
 
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "client_id", nullable = false)
-    private Client client;
+    @Column(name = "client_id")
+    private Integer clientId;
 }

@@ -4,10 +4,10 @@ import lombok.Data;
 
 @Data
 public class Payment {
-    private PaymentIdVO id;
-    private PaymentDescriptionVO description;
-    private PaymentAmountVO amount;
-    private PaymentClientIdVO clientId;
-    private PaymentCreatedAtVO createdAt;
-    private PaymentUpdatedAtVO updatedAt;
+    private PaymentId id;
+    private PaymentDescription description;
+    private PaymentAmount amount;
+    private PaymentClientId clientId;
+    private PaymentCreatedAt createdAt;
+    private PaymentUpdatedAt updatedAt;
 }

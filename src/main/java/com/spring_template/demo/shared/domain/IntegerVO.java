@@ -7,13 +7,14 @@ public abstract class IntegerVO implements ValueObject {
 
     public IntegerVO(Integer value) {
         this.value = value;
+        ensureValid();
     }
 
     @Override
     public Integer getValue() {
         return value;
     }
-    
+
     @Override
     public boolean equals(Object o) {
         if (this == o) {

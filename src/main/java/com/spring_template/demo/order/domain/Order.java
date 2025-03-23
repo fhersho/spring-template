@@ -4,10 +4,10 @@ import lombok.Data;
 
 @Data
 public class Order {
-    private OrderIdVO id;
-    private OrderDescriptionVO description;
-    private OrderAmountVO amount;
-    private OrderClientIdVO clientId;
-    private OrderCreatedAtVO createdAt;
-    private OrderUpdatedAtVO updatedAt;
+    private OrderId id;
+    private OrderDescription description;
+    private OrderAmount amount;
+    private OrderClientId clientId;
+    private OrderCreatedAt createdAt;
+    private OrderUpdatedAt updatedAt;
 }
