@@ -1,4 +1,4 @@
-package com.spring_template.demo.configuration;
+package com.spring_template.demo.shared.configuration;
 
 import org.springframework.context.annotation.Configuration;
 

@@ -1,4 +1,4 @@
-package com.spring_template.demo.configuration;
+package com.spring_template.demo.shared.configuration;
 
 import io.swagger.v3.oas.models.Components;
 import io.swagger.v3.oas.models.OpenAPI;

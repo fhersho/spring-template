@@ -3,6 +3,7 @@ package com.spring_template.demo.client.infraestructure.repository;
 import com.spring_template.demo.client.domain.Client;
 import com.spring_template.demo.client.domain.ClientRepository;
 import com.spring_template.demo.client.infraestructure.repository.jpa.ClientEntity;
+import com.spring_template.demo.client.infraestructure.repository.jpa.ClientEntityMapper;
 import com.spring_template.demo.client.infraestructure.repository.jpa.ClientJPARepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -20,29 +21,29 @@ public class ClientRepositoryAdapter implements ClientRepository {
 
     @Override
     public Client save(Client client) {
-        ClientEntity clientEntity = ClientEntity.toEntity(client);
+        ClientEntity clientEntity = ClientEntityMapper.toEntity(client);
         clientEntity.setDebt(0);
         clientEntity.setCreatedAt(new Date());
         clientEntity = repository.save(clientEntity);
 
-        return ClientEntity.toDomain(clientEntity);
+        return ClientEntityMapper.toDomain(clientEntity);
     }
 
     @Override
     public Optional<Client> findById(Integer id) {
         ClientEntity clientEntity = repository.findById(id).orElse(null);
-        return Optional.ofNullable(ClientEntity.toDomain(clientEntity));
+        return Optional.ofNullable(ClientEntityMapper.toDomain(clientEntity));
     }
 
     @Override
     public List<Client> findAll() {
-        return repository.findAll().stream().map(entity -> ClientEntity.toDomain(entity))
+        return repository.findAll().stream().map(entity -> ClientEntityMapper.toDomain(entity))
                 .collect(Collectors.toList());
     }
 
     @Override
     public void delete(Client entity) {
-        ClientEntity clientEntity = ClientEntity.toEntity(entity);
+        ClientEntity clientEntity = ClientEntityMapper.toEntity(entity);
         repository.delete(clientEntity);
     }
 }

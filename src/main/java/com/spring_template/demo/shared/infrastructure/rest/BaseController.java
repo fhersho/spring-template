@@ -9,7 +9,7 @@ import java.util.List;
 public interface BaseController<GET_LIST_INPUT, GET_LIST_OUTPUT,
         GET_BY_ID_OUTPUT, SAVE_INPUT, SAVE_OUTPUT, UPDATE_INPUT, UPDATE_OUTPUT> {
 
-    @org.springframework.web.bind.annotation.GetMapping
+    // @GetMapping()
     ResponseEntity<List<GET_LIST_OUTPUT>> getAll();
 
     ResponseEntity<GET_BY_ID_OUTPUT> findById(@PathVariable Integer id);
